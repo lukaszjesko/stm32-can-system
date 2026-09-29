@@ -1,0 +1,25 @@
+# STM32CubeIDE build output - recreated on every build
+Debug/
+Release/
+build/
+# STM32CubeIDE workspace metadata - the workspace lives outside the repo
+.metadata/
+
+# KiCad backups, lock files, local view settings
+*-backups/
+_autosave-*
+*.lck
+fp-info-cache
+*.kicad_prl
+
+# Python
+__pycache__/
+.venv/
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Claude Code files - private, stay on this computer only
+CLAUDE.md
+.claude/
