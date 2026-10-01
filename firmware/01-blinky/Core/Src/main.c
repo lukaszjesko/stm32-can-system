@@ -20,8 +20,14 @@
 #include "main.h"
 #include "gpio.h"
 
+
+
+
+
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <stdio.h>
 
 /* USER CODE END Includes */
 
@@ -67,6 +73,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+	uint32_t licznik = 0;
 
   /* USER CODE END 1 */
 
@@ -113,8 +120,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  BSP_LED_Toggle(LED_GREEN);
-			  HAL_Delay(500);
+	BSP_LED_Toggle(LED_GREEN);
+	HAL_Delay(500);
+	printf("hello %lu\r\n", licznik);
+	licznik++;
+
+
 
     /* USER CODE END WHILE */
 
