@@ -22,4 +22,35 @@ BSP_LED_Toggle(LED_GREEN)                   ← BSP: "która dioda na płytce"
 BSP → HAL → rejestry; toggle przez ODR i BSRR, bo BSRR zmienia tylko wskazane bity jednym zapisem
 
 
-## 2026-09-31
+## 2026-10.01
+- printf przez UART
+
+breakpoint - punkt zatrzymania, zatrzymanie procesora a danej lini i oglądanie wartości zmiennych 
+
+printf("hello")
+
+printf("hello")                        ← kod
+ └ _write()                            ← syscalls.c:80, dzieli tekst na znaki
+    └ __io_putchar()                   ← BSP, stm32g4xx_nucleo.c:576, gotowe od CubeMX
+       └ HAL_UART_Transmit()           ← HAL wysyła 1 bajt
+          └ LPUART1 → pin PA2 (TX)     ← sprzęt STM32
+             └ ST-LINK → USB → COMx    ← UM2505, rozdz. 7.6.5, str. 24
+                └ PuTTY na laptopie
+
+UART - łącze szeregowe, bity idą jeden po drugim, bez osobnego sygnału zegara 
+
+stdio.h (standard input/output) zawiera deklarację printf: informację dla kompilatora, jak wygląda ta funkcja i co przyjmuje.
+
+uint32_t - u unsigned int 32 bity czyli 4 bajty wybieramy 32 bity o cortex-m4 procesor 32 bitowy i taki rozmiar przetwarza najszybciej 
+
+hello %lu\r\n - tekst formatujący 
+%lu - long unsigned 
+\r - carriage return - cofa kursor na początek lini 
+\n przenosi kursor linię niżej 
+
+
+ctr- b - build 
+
+1. preprocesor wkleja pliki z  #include 
+2. komilator zamienia .c na ARM .o kod maszynowy 
+3. linker skleja w jeden plik 
