@@ -84,7 +84,7 @@ prędkość CAN ustawia się dzieląc zegar kontrolera, wszystkie węzły musza 
 Punkt próbkowania to moment w trakcie bitu, w którym kontroler sprawdza, czy linia jest w stanie 0 czy 1.
 
 ramka CAN ---------------
-- ID - mówi co jest w ramce - prędkość silnika, nie jest adresem urządzaenia
+- ID - mówi co jest w ramce - prędkość silnika, nie jest adresem urządzenia
 im mniejsze ID tym wyższy priorytet na magistrali
 
 can ma 11 bitowe ID , J1939 29-bitowe 
@@ -93,4 +93,31 @@ can ma 11 bitowe ID , J1939 29-bitowe
 
 - dane to 0 - 8 bajtów 
 
+C:
 
+- FDCAN_TxHeaderTypeDef 
+
+to struktura, czyli jakby formularz z polami. Wypełniasz go, a HAL na tej podstawie buduje ramkę. 
+do środka dostajemy się przez kropkę 
+
+- uint8_t txData[8] to tablica: 8 bajtów jeden po drugim. txData[0] to pierwszy bajt.
+- 0x przed liczbą oznacza zapis szesnastkowy (hex). W CAN ID i dane zapisuje się prawie zawsze w hex.
+
+FDCAN_TxHeaderTypeDef txHeader; to formularz ramki do wysłania,
+FDCAN_RxHeaderTypeDef rxHeader; to formularz do którego HAL wpisze dane ramki 
+
+Tx = Transmit, rx receive 
+
+HAL - hardware abstraction layer, biblioteka gotowych funkcji od ST, zamiast samemu pisać wartości rejestrów wywołuję funkcję, 
+
+BSP - > HAL -> rejestry 
+wpisywanie wartości do formularza np. - txHeader.Identifier = 0x123;
+
+co oznacza: 
+txHeader.Identifier = 0x123; - nadaje identyfikator o wartości 123 w szesnastkowym, określa priorytet w przypadku kolizji na kablu 
+txHeader.IdType = FDCAN_STANDARD_ID; - ustawia długość id na standard - 11 
+
+txHeader.TxFrameType = FDCAN_DATA_FRAME; - definiuje jako ramkę z danymi 
+txHeader.DataLength = FDCAN_DLC_BYTES_8; - określa dlc data length code na 8 bajtó ( maksymalny rozmiar danych dla klasycznego standardu CAN)
+
+ctr shift f wyrównuje 
