@@ -22,7 +22,7 @@ BSP_LED_Toggle(LED_GREEN)                   ← BSP: "która dioda na płytce"
 BSP → HAL → rejestry; toggle przez ODR i BSRR, bo BSRR zmienia tylko wskazane bity jednym zapisem
 
 
-## 2026-10.01
+## 2026-10-01
 - printf przez UART
 
 breakpoint - punkt zatrzymania, zatrzymanie procesora a danej lini i oglądanie wartości zmiennych 
@@ -54,3 +54,43 @@ ctr- b - build
 1. preprocesor wkleja pliki z  #include 
 2. komilator zamienia .c na ARM .o kod maszynowy 
 3. linker skleja w jeden plik 
+
+## 2026-10-02
+projekt 02-can-loopback 
+
+w cube mx nowy projket
+Connectivity → FDCAN1  - odpowiada za komunikację CAN, domyślnie wszystkie wyłączone żeby oszczędzać prąd, activate daje procesorowi znać że używamy do komunikacji can
+
+internal loopback - gadanie do lustra - procesor nie ma wypuszczać sygnału na zewnątrz do kabli tylko zawracać do środka 
+FDCAN1_TX i FDCAN1_RX na zielono tx wysyła dane, rx odbiera, 
+(PA11 , PA12) - używane do komunikacji USB w STM32 
+
+
+CUBEMX prędkość 250kbit/s 
+fd can 170Mhz - prędkość zegara CAN w MHz - z niego ustawia się długość jednego bity 
+
+prescaler 17 dzieli zegar 
+170 MHZ / 17  = 10 Mhz 
+jeden takt to kwant czasu tq i trwa 100 ns
+
+przy 250 kbit/s bit trwa 4 us czyli 40 kwantów
+
+clock divider - devide by 1 - caly surowy syngnał z procesora 170 Mhz 
+nominal prescaler - 17  
+dlaczego? -  zegar 170 MHz trzeba zmniejszyć do 250 000 bitów na sekundę. 170 MHz / 17 = 10 MHz. Z okrągłych 10 MHz łatwo wyliczyć resztę: na jeden bit przypada dokładnie 40 taktów. 
+
+każdy węzeł na magistal CAN musi mieć ustawioną tę samą prędkość 
+prędkość CAN ustawia się dzieląc zegar kontrolera, wszystkie węzły musza mieć tą samą predkość i podobny czas próbkowania 
+Punkt próbkowania to moment w trakcie bitu, w którym kontroler sprawdza, czy linia jest w stanie 0 czy 1.
+
+ramka CAN ---------------
+- ID - mówi co jest w ramce - prędkość silnika, nie jest adresem urządzaenia
+im mniejsze ID tym wyższy priorytet na magistrali
+
+can ma 11 bitowe ID , J1939 29-bitowe 
+
+- DLC liczba bajtów dancych od 0 do 8 
+
+- dane to 0 - 8 bajtów 
+
+
