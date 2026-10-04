@@ -74,6 +74,8 @@ int main(void)
 
   /* USER CODE BEGIN 1 */
 	uint32_t licznik = 0;
+	int32_t stan_przycisku;
+
 
   /* USER CODE END 1 */
 
@@ -120,10 +122,18 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	BSP_LED_Toggle(LED_GREEN);
-	HAL_Delay(500);
-	printf("hello %lu\r\n", licznik);
-	licznik++;
+
+
+	stan_przycisku = BSP_PB_GetState(BUTTON_USER);
+	if (stan_przycisku == 1){
+		BSP_LED_Toggle(LED_GREEN);
+		HAL_Delay(100);
+		printf("hello %lu B1=%ld\r\n", licznik,stan_przycisku);
+		licznik++;
+		}
+
+
+
 
 
 
