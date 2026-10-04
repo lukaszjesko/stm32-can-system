@@ -4,6 +4,9 @@ Release/
 build/
 # STM32CubeIDE workspace metadata - the workspace lives outside the repo
 .metadata/
+# STM32CubeIDE local run/debug configurations and view settings
+*.launch
+com.st.stm32cube.ide.mcu.sfrview.prefs
 
 # KiCad backups, lock files, local view settings
 *-backups/
