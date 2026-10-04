@@ -19,8 +19,10 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <stdio.h>
 
 /* USER CODE END Includes */
 
@@ -73,6 +75,7 @@ int main(void)
 	FDCAN_RxHeaderTypeDef rxHeader;
 	uint8_t txData[8] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88 };
 	uint8_t rxData[8];
+	HAL_StatusTypeDef status;
 
 
   /* USER CODE END 1 */
@@ -97,6 +100,7 @@ int main(void)
   MX_GPIO_Init();
   MX_FDCAN1_Init();
   /* USER CODE BEGIN 2 */
+
 	txHeader.Identifier = 0x123;
 	txHeader.IdType = FDCAN_STANDARD_ID;
 	txHeader.TxFrameType = FDCAN_DATA_FRAME;
@@ -129,8 +133,22 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  status = HAL_FDCAN_Start(&hfdcan1);
+  if (status != HAL_OK){
+  			printf("FDCAN start error\r\n");
+  		}
   while (1)
+
   {
+
+
+	  status = HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &txHeader, txData);
+	  if (status != HAL_OK){
+		  printf("TX error\r\n");
+	  }else{
+		  printf("TX ok\r\n");
+	  }
+	  HAL_Delay(1000);
 
     /* USER CODE END WHILE */
 
