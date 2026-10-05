@@ -97,6 +97,7 @@ C:
 
 - FDCAN_TxHeaderTypeDef 
 
+
 to struktura, czyli jakby formularz z polami. Wypełniasz go, a HAL na tej podstawie buduje ramkę. 
 do środka dostajemy się przez kropkę 
 
@@ -121,3 +122,47 @@ txHeader.TxFrameType = FDCAN_DATA_FRAME; - definiuje jako ramkę z danymi
 txHeader.DataLength = FDCAN_DLC_BYTES_8; - określa dlc data length code na 8 bajtó ( maksymalny rozmiar danych dla klasycznego standardu CAN)
 
 ctr shift f wyrównuje 
+## 2026-10-03
+putty pokazuje tekst przychodzący przez com 
+
+nucleo wysyła znaki putty, wyświetla 
+Speed:  115200. To prędkość w bitach na sekundę 
+
+Breakpoint zatrzymuje procesor na wybranej linijce.
+Wtedy przez swd (te same przewody co od wgrywania projeku) można podejrzeć pjakie wartości mają zmiennne w pamięci 
+
+## 2026-10-04
+BSP_LED_Toggle(LED_GREEN) - zmienia stan LED 
+printf("hello %lu\r\n", licznik); - %lu podstawia licznik, r - carriage return kursor na początek ekranu, n line feed nowa linia 
+
+cubemx generuje inicjalizację (zegary piny, UART) ja piszę logikę pętli głownej 
+UART - kabel transmisyjny - 
+tx transmit - procesor nadaje    Universal Asynchronous Receiver-Transmitter - asynchroniczny bo brak osobnego kabla z zegarem
+
+rx receive 
+ćwiczeni dioda zapala się 5 razy w ciągu sekudnyd 
+HAL_DELAY() przyjmuje w ms 
+1000ms / 5 = 200ms ale że BSP_LED_Toggle(LED_GREEN) gdy dioda świeci to gasi, a jak zgaszona to zapala 
+200/2 = 100ms 
+
+BSP_LED_Toggle(LED_GREEN);
+HAL_Delay(100);
+
+BSP_PB_GetState(BUTTON_USER)
+Bada stan pinu przycisku i zwraca wynik jako liczbę całkowitą: 0 albo 1
+
+02-can-loopback
+cubemx skonfigurował FDCAN1 ale nie włączył, żeby włączyć - HAL_FDCAN_Start(&hfdcan1);
+
+w while 
+HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &txHeder, txData) - wkłada do koljeki nadawczej TxFifo i kontroler sam wysyła
+
+ & (przed hfdcan1 i txHeader) oznacza adres zmiennej, czyli informację, gdzie leży w pamięci
+ Funkcja nie dostaje kopii całego „formularza”, tylko wskazanie, gdzie go znaleźć.
+
+  hfdcan1 to uchwyt (handle), struktura opisująca kontroler FDCAN1, którą CubeMX zadeklarował w linii 45
+
+  Pętla while (1) obraca się miliony razy na sekundę. Kolejka nadawcza CAN (tzw. Tx FIFO) ma miejsce tylko na 3 ramki naraz
+  Bez opóźnienia procesor zapycha kolejkę w ułamku milisekundy i natychmiast zaczyna sypać błędem TX error
+
+  
