@@ -164,5 +164,8 @@ HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &txHeder, txData) - wkłada do koljeki n
 
   Pętla while (1) obraca się miliony razy na sekundę. Kolejka nadawcza CAN (tzw. Tx FIFO) ma miejsce tylko na 3 ramki naraz
   Bez opóźnienia procesor zapycha kolejkę w ułamku milisekundy i natychmiast zaczyna sypać błędem TX error
+  
+## 2026-10-05
+  w stm32 jest wbudowany konroler CAN, bity normalnie wychodzą punem tx do transceivera a stamtąd do innych urządzeń, na razie nie ma 
 
   
