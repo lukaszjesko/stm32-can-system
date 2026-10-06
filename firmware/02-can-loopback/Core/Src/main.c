@@ -76,6 +76,7 @@ int main(void)
 	uint8_t txData[8] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88 };
 	uint8_t rxData[8];
 	HAL_StatusTypeDef status;
+	uint32_t rxCount;
 
 
   /* USER CODE END 1 */
@@ -141,13 +142,29 @@ int main(void)
 
   {
 
+		status = HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &txHeader, txData);
+		if (status != HAL_OK) {
+			printf("TX error\r\n");
+		} else {
+			printf("TX ok\r\n");
+		}
+		HAL_Delay(10);
+		rxCount = HAL_FDCAN_GetRxFifoFillLevel(&hfdcan1, FDCAN_RX_FIFO0);
+		if (rxCount > 0) {
+			status = HAL_FDCAN_GetRxMessage(&hfdcan1, FDCAN_RX_FIFO0, &rxHeader,
+					rxData);
+			if (status == HAL_OK) {
+				printf("RX id=0x%lX data=%02X...%02X\r\n", rxHeader.Identifier,
+						rxData[0], rxData[7]);
+				BSP_LED_Toggle(LED_GREEN);
 
-	  status = HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &txHeader, txData);
-	  if (status != HAL_OK){
-		  printf("TX error\r\n");
-	  }else{
-		  printf("TX ok\r\n");
+			}
+
 	  }
+	  else{
+	  			  printf("RX empty\r\n");
+	  		  }
+
 	  HAL_Delay(1000);
 
     /* USER CODE END WHILE */
