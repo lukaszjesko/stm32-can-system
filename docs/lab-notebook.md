@@ -164,8 +164,55 @@ HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &txHeder, txData) - wkłada do koljeki n
 
   Pętla while (1) obraca się miliony razy na sekundę. Kolejka nadawcza CAN (tzw. Tx FIFO) ma miejsce tylko na 3 ramki naraz
   Bez opóźnienia procesor zapycha kolejkę w ułamku milisekundy i natychmiast zaczyna sypać błędem TX error
-  
-## 2026-10-05
-  w stm32 jest wbudowany konroler CAN, bity normalnie wychodzą punem tx do transceivera a stamtąd do innych urządzeń, na razie nie ma 
 
-  
+## 2026-10-05
+  w stm32 jest wbudowany konroler CAN, bity normalnie wychodzą punem tx do transceivera a stamtąd do innych urządzeń, na razie nie ma transceivera (układu który zamnienia a je na napięca na kablu CAN) i stamtąd do innych urządzeń 
+
+
+while (1)
+
+  {
+
+
+	  status = HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &txHeader, txData);
+	  if (status != HAL_OK){
+		  printf("TX error\r\n");
+	  }else{
+		  printf("TX ok\r\n");        HAL_OK - ramka trafiła do kolejki nadawczej 
+	  }
+	  HAL_Delay(1000);
+
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
+
+## 2026-10-06
+txData - TxFIFO - kontroler FDCAN (osobny układ wewnątrze stm3, odbera sam ramki i odkłada do Rx FIFO0 procesor w tym czasie czeka HAL_Delay) - loopback - filtr  - rx FIFO0 - rxHeader + rxData
+
+HAL_FDCAN_GetRxFifoFillLevel(&hfdcan1, FDCAN_RX_FIFO0) - podaje poziom zapełnienia od &hfdcan1 - stm32g432 ma tylko Fdcan1 ale większe mają jeszcze kilka, dlatego każd  funkcja dostaje handle 
+FDCAN_RX_FIFo0 - mówi o którą kolejkę pytam 
+są FIFO0 i FIFO1,
+
+status = HAL_FDCAN_GetRxMessage(&hfdcan1, FDCAN_RX_FIFO0, &rxHeader, rxData);
+
+getrxmessage - hfdcan1 - któy kontroler fcdan_rx_fifo0 która kolejka, rxheader - adres formularza do kótrego zapisze fo którego HAL zpaisze, rxData - adres tablicy 
+status = HAL_FDCAN_GetRxMessage
+
+
+printf("RX id=0x%lX data=%02X...%02X\r\n", rxHeader.Identifier, rxData[0], rxData[7]);
+ rxHeader.Identifier: kropka oznacza „wejdź do pola struktury” To ID odebranej ramki, które HAL wpisał
+   %lX wypisuje liczbę w hex, l = long, bo ID jest typu uint32_t
+   %02X wypisuje bajt w hex, zawsze 2 cyfry (0 = dopełnij zerem). Bez tego 0x05 wyświetliłoby się jako 5.
+
+    %02 mówi tylko „2 cyfry, dopełnij zerem”. Brakuje litery, która mówi, jak wypisać liczbę (X = hex)
+
+
+     ID ustala też priorytet: gdy dwa urządzenia nadają naraz, wygrywa mniejsze ID. Ten mechanizm nazywa się arbitraż
+
+Putty wyświetla identyfikator id ramki w systemie szesnastkowym oraz pierwszą i ostatnią wartość z ramki, sprawdza też czy przenoszenie ramki się udało - jeśli się udało zapala się led 
+
+## 2026-10-07
+
+txHeader.Identifier = 0x123;
+can id - identyfikator ramki, co to za wiadomość i ustala priorytet, mniejsze ID ma dostęp do magistrali, standardowe ID 11 bitów, 
