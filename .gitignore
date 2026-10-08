@@ -26,3 +26,4 @@ desktop.ini
 # Claude Code files - private, stay on this computer only
 CLAUDE.md
 .claude/
+.history/
