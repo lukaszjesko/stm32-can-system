@@ -216,3 +216,26 @@ Putty wyświetla identyfikator id ramki w systemie szesnastkowym oraz pierwszą 
 
 txHeader.Identifier = 0x123;
 can id - identyfikator ramki, co to za wiadomość i ustala priorytet, mniejsze ID ma dostęp do magistrali, standardowe ID 11 bitów, 
+
+https://github.com/makerbase-mks/CANable-MKS/blob/main/Hardware/MKS%20CANable%20V2.0/MKS%20CANable%20V2.0_001%20schematic.pdf
+analiza projektu
+c4 połączone z vss zasialnie z zasialniem 3.3v i kondensatorem, w tym samym połączeniu CAN RX z rezystorem 
+c7 podobnie zasilanie tak jak c8 do vdd, zasilanie podone na vdd vdda vret+ w połączeniu z 3 kondensatorami 100nF, 
+kondensatory odsprzęglające, 
+
+boot0 - stan niski, mikrokontroler uruchamia się w trybie norlamnym, zaczyna wykonywać kod z pamięci flash,
+boot1 - stan system memory, uruchamia się program st bootlander, który pozwala wgrać nowy soft to procesora bez st lina np magistralę can 
+
+r6 rezystor ściągający pull down trzyma boot 0 w stanie 0 
+
+
+LQFP - Low-profile Quad Flat Package   7x7mm wymiar plastikowego korpusu bez nóżek 
+P0.5mm to pitch, czyli rozstaw nóżek: 0,5 mm od środka do środka
+
+## 2026-10-08
+DS12589, rysunek 16
+po jednym 100 nF przy każdym pinie VDD, + 1 wspólny kondenastor dla wszystkich, 
+
+vbat zasila backup circurity w procesorze - zegar czasu rzeczywistego, kwartc rejestry zapasowe 
+
+nrst - pin pg10 - stan 0 zatrzymyuje procesor i zerouje 
