@@ -239,3 +239,20 @@ po jednym 100 nF przy każdym pinie VDD, + 1 wspólny kondenastor dla wszystkich
 vbat zasila backup circurity w procesorze - zegar czasu rzeczywistego, kwartc rejestry zapasowe 
 
 nrst - pin pg10 - stan 0 zatrzymyuje procesor i zerouje 
+
+## 2026-10-12
+
+pomiar rezystancji multimetrem, zakres 200omów
+canh - canl - moduł  VP230 123omy, 
+CANH - J1 moduł MCP2515 - 118 Ω
+ H–L bez J1 = OL
+ kwarc - 8MHz 
+
+
+## 2026-10-13
+nano w trybie loopback działa id200  8 bajtów w serial monitorze 
+krzaczki w serial monitorze - zła prędkość
+schemat: diody (PA15/PB11 jak w firmware CANable), złącze SWD, USB-C
+
+
+
