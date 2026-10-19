@@ -15,7 +15,7 @@ void setup() {
 
   mcp2515.reset();
   mcp2515.setBitrate(CAN_250KBPS, MCP_8MHZ);
-  mcp2515.setLoopbackMode();  // frames go back to our own receiver, nothing on the bus
+  mcp2515.setNormalMode();  
 
   txFrame.can_id  = 0x200;      // standard 11-bit ID
   txFrame.can_dlc = 8;        // 8 data bytes

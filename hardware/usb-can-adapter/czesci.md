@@ -11,7 +11,9 @@
 | Rezystor terminacji | 120 Ω | 0805 | | | | | |
 | Zworka terminacji | goldpin 1×2 + zworka | 2,54 mm | | | | | |
 | Złącze CAN | listwa śrubowa 3-pin (CANH, CANL, GND) | raster 3,5 mm, THT | do znalezienia | | | | wybrana 15.10 (rozmiar płytki, łatwe testy z modułami) |
-| Przycisk BOOT0 | TS-1187A-B-A-B (XKB) | SMD 5,1×5,1 mm | LCSC C318884 | ponad 700 000 szt. (LCSC) | ~0,01 USD | | |
+| ESD na CAN | PESD2CAN (Nexperia) | SOT-23 | do znalezienia | | | | |
+
+BOOT0: option bytes nSWBOOT0 = 0, nBOOT0 = 1, ustawiane przez SWD przy uruchamianiu, BOR 2,8 V. PB8 zostaje tylko jako CAN_RX, bez przycisku BOOT0.
 
 ## Już na schemacie
 
