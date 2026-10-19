@@ -255,4 +255,15 @@ krzaczki w serial monitorze - zła prędkość
 schemat: diody (PA15/PB11 jak w firmware CANable), złącze SWD, USB-C
 
 
+## 2026-10-19
+
+terminacja zmierzona - wynik 59 omów, transceivery mają wspólne GND, 
+zmieniony kwarc HSI na HSE żeby oba węzły odmierzały identycznie, wewnętrzy zegar RC ma odchylenie około 1% 
+ta sama prędkość 250kbit/s po obu stronach, 
+dziwny zapach rozłączyłem i podłączyłem kolejno elementy, przed tym pomiar zwarć bez prądu 
+STM ok, MCP ok, coś było źle podłączone 
+
+
+
+
 
