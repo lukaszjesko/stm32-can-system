@@ -263,6 +263,33 @@ ta sama prędkość 250kbit/s po obu stronach,
 dziwny zapach rozłączyłem i podłączyłem kolejno elementy, przed tym pomiar zwarć bez prądu 
 STM ok, MCP ok, coś było źle podłączone 
 
+## 2026-10-22 
+odczytałem poszczególne bity z analizatora, 
+nano + mcp2515 (moduł can bus ) -----  nucleo + vp 230 
+nano co sekundę wysyłało 0x200 id a nucleo co sekunde 0x123 
+
+ramka skłąda się z 
+-id
+-danych 
+-pól kontrolnych 
+0x123 < 0x200 - większy priorytet 
+
+sof początek ramiki - pierwsze 0 po ciszy 
+id 11 bitowe 
+nad id jest 12 bitó bo 1 stuff bit, po 5 takich samych jest wstaiany jeden przeciwny bo przy długim ciągu nie byłoby zbocza i zegar mógły zgubić rachubę 
+SOF (początek ramki) - 1 bit -  pierwsze 0 po ciszy (same 1)
+ ID 11 bitów
+ RTR, IDE, r0 3 bity, ide jest na 0, gdyby J1939 to byłoby 1 (0 standardowe) 
+  DLC  4 bity 
+
+rtr - ramka danych odczytanie, ideo id standardowe, r 0 zarezerwowany zawsze 0,
+dlc kończy się trzema 0 
+po crc-15 seqence - 1 bit crc delimiter, 0 ack slot - znaczy że ramka odberana, ack delimiter - 1, 
+end of frame 7 jednynek 
+
+
+
+
 
 
 
