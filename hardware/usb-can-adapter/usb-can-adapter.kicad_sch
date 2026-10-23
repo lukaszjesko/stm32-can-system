@@ -5910,12 +5910,112 @@
 		(uuid "7cd72c44-f7ea-4411-9a48-162acc9b61bd")
 	)
 	(no_connect
+		(at 115.57 137.16)
+		(uuid "071a2817-f968-4b76-b047-deb6bb53799c")
+	)
+	(no_connect
+		(at 115.57 127)
+		(uuid "1031031c-bc9d-4eaf-b894-8f1daa64fa37")
+	)
+	(no_connect
+		(at 115.57 104.14)
+		(uuid "16d46f78-1a3b-457a-b444-4d5cebab97bb")
+	)
+	(no_connect
 		(at 81.28 140.97)
 		(uuid "26a93e67-2c76-41ea-9343-5573b362fbd1")
 	)
 	(no_connect
+		(at 115.57 119.38)
+		(uuid "26c19e5d-c92c-4c7e-b1e4-b8ae25d34d84")
+	)
+	(no_connect
+		(at 151.13 91.44)
+		(uuid "295792b3-086c-494a-bbfa-997d1a6f9dda")
+	)
+	(no_connect
+		(at 151.13 78.74)
+		(uuid "32f1ee98-4187-40d7-8a4b-a98a06bf2eb9")
+	)
+	(no_connect
+		(at 115.57 134.62)
+		(uuid "366c875c-ccf6-4623-bb50-794d8d550b12")
+	)
+	(no_connect
+		(at 115.57 106.68)
+		(uuid "3c888e3b-9d58-4493-aab1-d60e2016dcfe")
+	)
+	(no_connect
+		(at 151.13 99.06)
+		(uuid "59b804f8-fdb9-4517-9040-308b3e4833f2")
+	)
+	(no_connect
+		(at 115.57 96.52)
+		(uuid "64f81f94-c952-4f40-bfab-167a7603cc5c")
+	)
+	(no_connect
+		(at 115.57 101.6)
+		(uuid "69dd515c-8c5c-4626-b4c6-bfad84e663ee")
+	)
+	(no_connect
+		(at 115.57 132.08)
+		(uuid "70f533c8-c2f7-453f-84c3-3c8916b6971d")
+	)
+	(no_connect
+		(at 115.57 116.84)
+		(uuid "73047998-b0ed-46f8-89fa-3c01d576f22e")
+	)
+	(no_connect
+		(at 151.13 86.36)
+		(uuid "7377303f-5eab-4ba8-80e6-c4609fa3cf7d")
+	)
+	(no_connect
+		(at 115.57 109.22)
+		(uuid "82da9add-c320-4baa-be9a-e0066888e4c5")
+	)
+	(no_connect
+		(at 151.13 81.28)
+		(uuid "856be79c-fc5d-4572-baef-08cd371cd380")
+	)
+	(no_connect
+		(at 151.13 96.52)
+		(uuid "898b8ba2-e0b8-49bf-9ab3-1ff8b9edd10d")
+	)
+	(no_connect
+		(at 115.57 111.76)
+		(uuid "8c3356d5-8b8e-4a50-9178-5b1ba72a56e0")
+	)
+	(no_connect
+		(at 151.13 83.82)
+		(uuid "9132f734-4752-4ff7-ba1e-275c80003a3c")
+	)
+	(no_connect
+		(at 115.57 93.98)
+		(uuid "953041ad-ab63-4e55-8536-37337e7910a6")
+	)
+	(no_connect
+		(at 115.57 139.7)
+		(uuid "a3772b59-7e4f-4607-a059-7c893c9a47f5")
+	)
+	(no_connect
 		(at 81.28 138.43)
 		(uuid "ae289a1e-9f47-485d-9613-3b9336dafc51")
+	)
+	(no_connect
+		(at 115.57 114.3)
+		(uuid "d315e8a6-97d5-4fb6-a11a-caab3bc9cfd6")
+	)
+	(no_connect
+		(at 151.13 93.98)
+		(uuid "d7115c3d-e63a-4a06-bea4-8a815fd092d3")
+	)
+	(no_connect
+		(at 151.13 76.2)
+		(uuid "df1d5c2f-1a30-42c9-953a-9fb080fdff65")
+	)
+	(no_connect
+		(at 151.13 88.9)
+		(uuid "e141cf4f-7ecf-4911-9cdf-63389108086e")
 	)
 	(no_connect
 		(at 52.07 176.53)
@@ -6173,6 +6273,16 @@
 	)
 	(wire
 		(pts
+			(xy 213.36 130.81) (xy 213.36 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c33d7ac-ca87-44d4-b3a9-295b110b3d5f")
+	)
+	(wire
+		(pts
 			(xy 222.25 57.15) (xy 222.25 60.96)
 		)
 		(stroke
@@ -6263,6 +6373,16 @@
 	)
 	(wire
 		(pts
+			(xy 213.36 152.4) (xy 213.36 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1eb01f9-38dd-4508-9774-bec3fb52da66")
+	)
+	(wire
+		(pts
 			(xy 210.82 116.84) (xy 215.9 116.84)
 		)
 		(stroke
@@ -6310,6 +6430,16 @@
 			(type default)
 		)
 		(uuid "b08cab81-5698-4e3c-bc67-65d47a76fa24")
+	)
+	(wire
+		(pts
+			(xy 226.06 152.4) (xy 226.06 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b45b33ab-f9e6-4d84-9829-e0dc0726f473")
 	)
 	(wire
 		(pts
@@ -6383,7 +6513,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.315 86.36) (xy 115.57 86.36)
+			(xy 107.95 86.36) (xy 115.57 86.36)
 		)
 		(stroke
 			(width 0)
@@ -6513,7 +6643,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 148.59) (xy 193.675 148.59)
+			(xy 190.5 148.59) (xy 194.31 148.59)
 		)
 		(stroke
 			(width 0)
@@ -6582,7 +6712,7 @@
 		(uuid "08494a15-28e2-4fa7-8551-bdb5180e5fda")
 	)
 	(label "OSC_OUT"
-		(at 193.675 148.59 0)
+		(at 194.31 148.59 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6632,7 +6762,7 @@
 		(uuid "1ebac675-8341-45b8-b746-5d35ab5aee62")
 	)
 	(label "OSC_OUT"
-		(at 107.315 86.36 0)
+		(at 107.95 86.36 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6752,7 +6882,7 @@
 		(uuid "3f0b93e0-5366-4846-900d-4f616c34319e")
 	)
 	(label "OSC_OUT"
-		(at 226.695 144.78 0)
+		(at 226.06 144.78 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6962,7 +7092,7 @@
 		(uuid "a277fd9c-fe05-4144-8ab4-db0e88948c38")
 	)
 	(label "OSC_IN"
-		(at 213.995 144.78 0)
+		(at 213.36 144.78 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7486,84 +7616,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 213.995 152.4 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1003f05f-f8ac-478f-b229-775372f993f5")
-		(property "Reference" "#PWR047"
-			(at 213.995 158.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 213.995 157.48 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 213.995 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 213.995 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 213.995 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "bee1582f-fb69-4f29-a269-4dabcfc32de8")
-		)
-		(instances
-			(project "usb-can-adapter"
-				(path "/92707a52-6ae0-410b-8a2c-d93eb5ec5cbe"
-					(reference "#PWR047")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 58.42 148.59 0)
 		(unit 1)
 		(body_style 1)
@@ -7642,7 +7694,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 226.695 148.59 0)
+		(at 226.06 148.59 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7653,7 +7705,7 @@
 		(fields_autoplaced yes)
 		(uuid "12c05f43-a663-45f7-9f0d-26c0a4d0ac4d")
 		(property "Reference" "C14"
-			(at 230.505 147.3199 0)
+			(at 229.87 147.3199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7664,7 +7716,7 @@
 			)
 		)
 		(property "Value" "15pF"
-			(at 230.505 149.8599 0)
+			(at 229.87 149.8599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7675,7 +7727,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 227.6602 152.4 0)
+			(at 227.0252 152.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7686,7 +7738,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 226.695 148.59 0)
+			(at 226.06 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7697,7 +7749,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 226.695 148.59 0)
+			(at 226.06 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10903,7 +10955,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 212.725 131.445 0)
+		(at 213.36 132.08 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10914,7 +10966,7 @@
 		(fields_autoplaced yes)
 		(uuid "677b0493-2e3b-4905-8117-5fc473868a07")
 		(property "Reference" "#PWR045"
-			(at 212.725 137.795 0)
+			(at 213.36 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10925,7 +10977,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 212.725 135.89 0)
+			(at 213.36 136.525 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10935,7 +10987,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 212.725 131.445 0)
+			(at 213.36 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10946,7 +10998,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 212.725 131.445 0)
+			(at 213.36 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10957,7 +11009,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 212.725 131.445 0)
+			(at 213.36 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11643,7 +11695,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 212.725 131.445 0)
+		(at 213.36 130.81 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11654,7 +11706,7 @@
 		(fields_autoplaced yes)
 		(uuid "8563a823-a8bf-48f5-b6c0-727b14aacc31")
 		(property "Reference" "#FLG02"
-			(at 212.725 129.54 0)
+			(at 213.36 128.905 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11665,7 +11717,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 212.725 127 0)
+			(at 213.36 126.365 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11675,7 +11727,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 212.725 131.445 0)
+			(at 213.36 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11686,7 +11738,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 212.725 131.445 0)
+			(at 213.36 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11697,7 +11749,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 212.725 131.445 0)
+			(at 213.36 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12604,7 +12656,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 213.995 148.59 0)
+		(at 213.36 148.59 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12615,7 +12667,7 @@
 		(fields_autoplaced yes)
 		(uuid "9fef86cb-8294-4b3e-8b18-f84f364686ca")
 		(property "Reference" "C13"
-			(at 217.805 147.3199 0)
+			(at 217.17 147.3199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12626,7 +12678,7 @@
 			)
 		)
 		(property "Value" "15pF"
-			(at 217.805 149.8599 0)
+			(at 217.17 149.8599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12637,7 +12689,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 214.9602 152.4 0)
+			(at 214.3252 152.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12648,7 +12700,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 213.995 148.59 0)
+			(at 213.36 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12659,7 +12711,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 213.995 148.59 0)
+			(at 213.36 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13601,7 +13653,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 226.695 152.4 0)
+		(at 226.06 153.67 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13612,7 +13664,7 @@
 		(fields_autoplaced yes)
 		(uuid "c788a6b3-7f0a-43e1-bdb2-268485e57a28")
 		(property "Reference" "#PWR048"
-			(at 226.695 158.75 0)
+			(at 226.06 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13623,7 +13675,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.695 157.48 0)
+			(at 226.06 158.75 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13633,7 +13685,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 226.695 152.4 0)
+			(at 226.06 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13644,7 +13696,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 226.695 152.4 0)
+			(at 226.06 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13655,7 +13707,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 226.695 152.4 0)
+			(at 226.06 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14937,6 +14989,84 @@
 			(project "usb-can-adapter"
 				(path "/92707a52-6ae0-410b-8a2c-d93eb5ec5cbe"
 					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 213.36 153.67 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e627c0e3-ada8-4a7e-86e5-17c3b277519d")
+		(property "Reference" "#PWR047"
+			(at 213.36 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 213.36 158.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 213.36 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 213.36 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7690852f-a7f8-449f-9661-0d597c1baf46")
+		)
+		(instances
+			(project "usb-can-adapter"
+				(path "/92707a52-6ae0-410b-8a2c-d93eb5ec5cbe"
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
