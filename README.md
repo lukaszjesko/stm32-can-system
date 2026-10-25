@@ -40,6 +40,8 @@ Frame `0x123` from the Nucleo:
   protection and a 24 MHz crystal. The CAN transceiver is next. I use the open-source
   CANable 2.0 as a reference and want to order the PCB in early November.
 
+![USB-CAN adapter schematic in KiCad](docs/img/usb-can-adapter-schematic.png)
+
 ## What I learned so far
 
 - STM32CubeIDE 2.x no longer includes CubeMX. You set up the chip in CubeMX and import
