@@ -287,6 +287,10 @@ dlc kończy się trzema 0
 po crc-15 seqence - 1 bit crc delimiter, 0 ack slot - znaczy że ramka odberana, ack delimiter - 1, 
 end of frame 7 jednynek 
 
+## 2026-10-30 
+
+ minimum JLCPCB to: ścieżka 0,10 mm, odstęp 0,10 mm, miedź od krawędzi 0,2 mm, pierścień wokół otworu 0,18 mm (zalecają 0,25)
+
 
 
 
