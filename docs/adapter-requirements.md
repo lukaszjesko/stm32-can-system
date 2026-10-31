@@ -27,7 +27,7 @@ The adapter connects a Linux computer to a CAN bus, so frames on the bus can be 
 
 ## 5. Mechanical
 
-- Board size about 40 × 20 mm, 2 layers.
+- Board size 50 × 25 mm, 2 layers.
 - Passive components in 0805 packages, hand soldered.
 
 ## 6. Out of scope (v2)
