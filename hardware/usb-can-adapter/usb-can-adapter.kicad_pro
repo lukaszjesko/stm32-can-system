@@ -60,7 +60,24 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "silk_edge_clearance|112370000|100000000|bc9b09e6-1576-45c4-94ab-ccccad33a88a|4b63062a-6f0a-4968-a4a5-9eb6c585dd5d",
+          ""
+        ],
+        [
+          "silk_edge_clearance|122640000|100000000|bc9b09e6-1576-45c4-94ab-ccccad33a88a|699e3f04-c392-4aa3-8df5-f30d13d0517d",
+          ""
+        ],
+        [
+          "silk_edge_clearance|150000000|115369262|bc9b09e6-1576-45c4-94ab-ccccad33a88a|74b40910-9aee-4060-bdfa-ef958636bf50",
+          ""
+        ],
+        [
+          "silk_overlap|132110000|114600000|4030f52f-a7ea-4e9c-b02f-c0d3583bd27a|c53413f0-4ab8-4516-a12c-2f76babe9b8a",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
