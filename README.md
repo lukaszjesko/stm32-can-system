@@ -33,12 +33,13 @@ Frame `0x123` from the Nucleo:
 
 ![CAN frame 0x123 with 8 data bytes decoded in PulseView](docs/img/can-frame-0x123.png)
 
-## In progress
+## USB-CAN adapter: PCB ordered
 
-- The adapter schematic in KiCad ([hardware/usb-can-adapter](hardware/usb-can-adapter)).
-  Done so far: the STM32 with decoupling, LEDs, SWD header, USB-C, the 3.3 V LDO, USB ESD
-  protection and a 24 MHz crystal. The CAN transceiver is next. I use the open-source
-  CANable 2.0 as a reference and want to order the PCB in early November.
+The adapter schematic and 2-layer layout are done in KiCad
+([hardware/usb-can-adapter](hardware/usb-can-adapter)). I used the open-source
+CANable 2.0 as a reference. The PCB is ordered from JLCPCB and the parts from LCSC.
+
+![USB-CAN adapter, KiCad 3D render](docs/img/usb-can-adapter-3d.png)
 
 ![USB-CAN adapter schematic in KiCad](docs/img/usb-can-adapter-schematic.png)
 
@@ -66,7 +67,7 @@ Frame `0x123` from the Nucleo:
 ## Next steps
 
 - [x] Two nodes on a real bus, frames decoded in PulseView
-- [ ] Adapter: finish the schematic and layout, order the PCB
+- [x] Adapter: finish the schematic and layout, order the PCB
 - [ ] Adapter: solder it and get `can0` working on Linux
 - [ ] J1939 node: buck converter design, 4-layer PCB, measurements
 - [ ] Python script with `python-can` and `cantools`

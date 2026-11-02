@@ -290,6 +290,20 @@ end of frame 7 jednynek
 ## 2026-10-30 
 
  minimum JLCPCB to: ścieżka 0,10 mm, odstęp 0,10 mm, miedź od krawędzi 0,2 mm, pierścień wokół otworu 0,18 mm (zalecają 0,25)
+ minimum clearance - najmniejszy odstęp, miedź miedź 
+ copper to edge clearance - miedź tyle od krawędzi cięcia, 
+
+  Net Classes (domyślne wartości, którymi rysuje) - tymi wartościami KiCad rysuje każdą nową ścieżkę i przelotkę
+  Via 0,7 / 0,3 daje pierścień (0,7 − 0,3) / 2 = 0,2 mm, więcej niż minimum JLC 0,18
+
+  Edge.Cuts = linia, po której fabryka frezuje (wycina) płytkę
+  140 − 100 = 40 mm szerokości, 120 − 100 = 20 mm wysokości
+
+## 2026-11-02 
+
+zrobiony cały layout płytki, wygenerowane pliki wierceń i gerbery, przy zamówieniu przejrzałem schemat okazało się że gniazdo usb-c było o,72 mm za krawędzią płytki, poprawiłem obrys zanim płytka poszła do produkcji
+płytki zamówione, DRC 0, nowe gerbery, 
+
 
 
 
