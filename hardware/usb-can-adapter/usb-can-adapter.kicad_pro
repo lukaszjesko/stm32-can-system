@@ -62,6 +62,18 @@
       ],
       "drc_exclusions": [
         [
+          "silk_edge_clearance|100475000|107575000|bc9b09e6-1576-45c4-94ab-ccccad33a88a|c8a3d70a-1158-4107-9525-4a8eac4b9fdb",
+          ""
+        ],
+        [
+          "silk_edge_clearance|100500000|107575000|bc9b09e6-1576-45c4-94ab-ccccad33a88a|3d7f3752-c4e8-436a-9fd8-67dc84ab9ad0",
+          ""
+        ],
+        [
+          "silk_edge_clearance|100500000|116975000|bc9b09e6-1576-45c4-94ab-ccccad33a88a|35496f83-4b09-4c12-ae25-01c53fb43585",
+          ""
+        ],
+        [
           "silk_edge_clearance|112370000|100000000|bc9b09e6-1576-45c4-94ab-ccccad33a88a|4b63062a-6f0a-4968-a4a5-9eb6c585dd5d",
           ""
         ],
@@ -567,7 +579,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "gerbers/",
       "specctra_dsn": "",
       "vrml": ""
     },
