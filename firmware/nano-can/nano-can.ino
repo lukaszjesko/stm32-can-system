@@ -13,6 +13,10 @@ struct can_frame rxFrame; // frame we receive
 void setup() {
   Serial.begin(115200);
 
+  pinMode(5, OUTPUT);
+
+
+
   mcp2515.reset();
   mcp2515.setBitrate(CAN_250KBPS, MCP_8MHZ);
   mcp2515.setNormalMode();  
@@ -32,22 +36,15 @@ void setup() {
 }
 
 void loop() {
-  MCP2515::ERROR status  = mcp2515.sendMessage(&txFrame);
-  if (status == MCP2515::ERROR_OK){
-    Serial.println("TX ok");
-  }else{
-    Serial.println("TX error");
-  }
-  status =  mcp2515.readMessage(&rxFrame);
+  MCP2515::ERROR status = mcp2515.readMessage(&rxFrame);
   if (status == MCP2515::ERROR_OK){
     Serial.print(rxFrame.can_id,HEX); Serial.print(" ");
-    for (int i = 0; i <8; i++){
+    for (int i = 0; i < rxFrame.can_dlc; i++){
       Serial.print(rxFrame.data[i],HEX); Serial.print(" ");
-      
     }
     Serial.println();
-  }else{
-    Serial.println("RX empty");
-  } 
-  delay(1000);
+    if (rxFrame.can_id == 0x300){
+      digitalWrite(5, rxFrame.data[0]);
+    }
+  }
 }
