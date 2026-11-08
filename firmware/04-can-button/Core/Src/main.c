@@ -19,7 +19,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
@@ -77,6 +76,8 @@ int main(void)
 	uint8_t rxData[8];
 	HAL_StatusTypeDef status;
 	uint32_t rxCount;
+	FDCAN_ErrorCountersTypeDef errCnt;
+	FDCAN_ProtocolStatusTypeDef protStatus;
 
 
   /* USER CODE END 1 */
@@ -149,8 +150,12 @@ int main(void)
 		  txData[0] = stan;
 		  status = HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &txHeader, txData);
 		  printf("stan %ld\r\n", stan);
+		  status = HAL_FDCAN_GetErrorCounters(&hfdcan1, &errCnt);
+		  status = HAL_FDCAN_GetProtocolStatus(&hfdcan1, &protStatus);
 		  stan_poprzedni = stan;
+		  printf("TEC: %lu REC: %lu, last error: %lu, error passive: %lu, buss off: %ld\r\n",errCnt.TxErrorCnt, errCnt.RxErrorCnt, protStatus.LastErrorCode, protStatus.ErrorPassive, protStatus.BusOff );
 	  }
+
 	  HAL_Delay(20);
 
 
@@ -226,7 +231,7 @@ static void MX_FDCAN1_Init(void)
   hfdcan1.Init.ClockDivider = FDCAN_CLOCK_DIV1;
   hfdcan1.Init.FrameFormat = FDCAN_FRAME_CLASSIC;
   hfdcan1.Init.Mode = FDCAN_MODE_NORMAL;
-  hfdcan1.Init.AutoRetransmission = DISABLE;
+  hfdcan1.Init.AutoRetransmission = ENABLE;
   hfdcan1.Init.TransmitPause = DISABLE;
   hfdcan1.Init.ProtocolException = DISABLE;
   hfdcan1.Init.NominalPrescaler = 17;
