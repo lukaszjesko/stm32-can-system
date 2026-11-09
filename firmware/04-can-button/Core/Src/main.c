@@ -139,21 +139,21 @@ int main(void)
   if (status != HAL_OK){
   			printf("FDCAN start error\r\n");
   		}
-  int32_t stan_poprzedni = BSP_PB_GetState(BUTTON_USER);
+  int32_t prev_state = BSP_PB_GetState(BUTTON_USER);
 
   while (1)
 
   {
-	  int32_t stan = BSP_PB_GetState(BUTTON_USER);
-	  if (stan != stan_poprzedni){
+	  int32_t state = BSP_PB_GetState(BUTTON_USER);
+	  if (state != prev_state){
 
-		  txData[0] = stan;
+		  txData[0] = state;
 		  status = HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &txHeader, txData);
-		  printf("stan %ld\r\n", stan);
+		  printf("state %ld\r\n", state);
 		  status = HAL_FDCAN_GetErrorCounters(&hfdcan1, &errCnt);
 		  status = HAL_FDCAN_GetProtocolStatus(&hfdcan1, &protStatus);
-		  stan_poprzedni = stan;
-		  printf("TEC: %lu REC: %lu, last error: %lu, error passive: %lu, buss off: %ld\r\n",errCnt.TxErrorCnt, errCnt.RxErrorCnt, protStatus.LastErrorCode, protStatus.ErrorPassive, protStatus.BusOff );
+		  prev_state = state;
+		  printf("TEC: %lu REC: %lu, last error: %lu, error passive: %lu, bus off: %lu\r\n",errCnt.TxErrorCnt, errCnt.RxErrorCnt, protStatus.LastErrorCode, protStatus.ErrorPassive, protStatus.BusOff );
 	  }
 
 	  HAL_Delay(20);
