@@ -304,6 +304,46 @@ end of frame 7 jednynek
 zrobiony cały layout płytki, wygenerowane pliki wierceń i gerbery, przy zamówieniu przejrzałem schemat okazało się że gniazdo usb-c było o,72 mm za krawędzią płytki, poprawiłem obrys zanim płytka poszła do produkcji
 płytki zamówione, DRC 0, nowe gerbery, 
 
+## 2026-11-09
+
+jak będzie działał firmware węzła: 
+teraz program to superpętla, w węźle też ale spraw jest więcej 
+
+ramki miały 11-bitowe id np 0x300, w j1939 29 bitów bo trzy informacje w jednej liczbie,
+[ priorytet ][ PGN = "o czym jest list" ][ adres nadawcy ]
+priorytet - mniejsza liczba wygrywa arbitraż - 3 bity 
+pgn - parametr group number - numer tematu np rozkaz dla wyjść 
+adres nadawcy - kto psize np 0x80 np laptop albo węzeł
+J1939 niesie ID - priorytet, PGN, adres nadawcy, 
+
+addres claim - sprawdzenie obecności - nikt nie protesujte zostaje np 0x80, ktoś już ma, spór wygrywa ten z mniejszym NAME
+
+węzeł dostaje rozkaz od laptopa - 
+np bajt danych: 0b00000101   <--- >ostatni bit 1 to jest bit zero bo liczy się od tyłu 
+
+ostatni bit nr 0 - wyjście 1 - on, bit 1 - wyjście 2 off, bit 3 - wyjście 1 on
+co 100ms wysyła ramle, 
+
+
+FreeRTOS - kilka minutników zamaiast jednej pętli
+jak jedna sprawa czeka - HAL_DELAY to wszystko czeka
+
+Watchdog - program działa - daje znać nic się nie dzieje 
+Buss off revocery - recovery zauwwaza bus off - czeka chwiel ei podłączna kontroler z powrotem
+
+Liczby z węzła: 
+9 - 32 V - bo instalacje 12 i 24 V + zapas 
+3 wyjścia x 2A - wyłączenie przy 2.5 A 
+250kbit/s - 29 bit ID - tak działą J1939 
+status co 100ms - 10 hz 
+
+adress claim - po starcie węzeł ogłosza swój adres 
+low side -  prosto z pinu MCU - między obciążeniem a masą, 
+dioda gasząca flyback - chroni z cewki przy wyłączniu, 
+przetwornica zamiast LDO, 
+watchdog  - restartuje MCU gdy się zawiesi
+
+
 
 
 
