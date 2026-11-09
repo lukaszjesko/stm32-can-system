@@ -21,6 +21,8 @@ Right now I'm working on the adapter.
   ([firmware/03-can-two-nodes](firmware/03-can-two-nodes)) and an Arduino Nano with an
   MCP2515 module ([firmware/nano-can](firmware/nano-can)). Each node sends one frame per
   second and the Nucleo prints the frames it gets from the Nano.
+- A button on the Nucleo switches an LED on the Nano over CAN, and the Nucleo prints its
+  CAN error counters after each frame ([bench test](#bench-test-button--can--led))
 
 Both frames captured on the Nucleo's CAN RX pin (PB8) with a cheap 8-channel logic
 analyzer at 4 MHz and decoded in PulseView. One bit takes 4 µs, which is 250 kbit/s.
@@ -32,6 +34,29 @@ Frame `0x200` from the Nano:
 Frame `0x123` from the Nucleo:
 
 ![CAN frame 0x123 with 8 data bytes decoded in PulseView](docs/img/can-frame-0x123.png)
+
+### Bench test: button → CAN → LED
+
+Two nodes on one CAN bus at 250 kbit/s, on a breadboard: a NUCLEO-G431RB with an
+SN65HVD230 transceiver and an Arduino Nano with an MCP2515 module. When I press or
+release the user button on the Nucleo, it sends frame `0x300` with one data byte
+(the button state). The Nano receives it and turns its LED on or off.
+
+![Button on the Nucleo switches the LED on the Nano](docs/img/can-button-demo.gif)
+
+After each frame the Nucleo reads the CAN error counters and prints them over UART:
+
+```
+state 1
+TEC: 0 REC: 0, last error: 0, error passive: 0, bus off: 0
+state 0
+TEC: 0 REC: 0, last error: 0, error passive: 0, bus off: 0
+```
+
+TEC and REC are the transmit and receive error counters. They stay at 0, so every
+frame got through without errors.
+
+Code: [firmware/04-can-button](firmware/04-can-button), [firmware/nano-can](firmware/nano-can).
 
 ## USB-CAN adapter: PCB ordered
 
@@ -61,6 +86,10 @@ CANable 2.0 as a reference. The PCB is ordered from JLCPCB and the parts from LC
 - PulseView on my Windows 11 laptop could not open the logic analyzer
   (`LIBUSB_ERROR_NOT_SUPPORTED`, with both WinUSB and libusbK drivers). It works in a
   Linux VM in VirtualBox with USB passthrough.
+- I tested CAN errors on purpose. With CAN_H unplugged nobody acknowledges the frame
+  (ACK error): TEC goes up by 8 per frame and stops at 128 (error passive). With my own
+  TX wire unplugged the node reads back a different bit than it sent (bit error) and
+  goes bus-off. It stays off until a reset, so the J1939 node will need bus-off recovery.
 - KiCad 10 keeps a local history folder with its own git repository inside. I added it
   to `.gitignore`.
 
