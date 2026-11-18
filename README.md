@@ -58,13 +58,16 @@ frame got through without errors.
 
 Code: [firmware/04-can-button](firmware/04-can-button), [firmware/nano-can](firmware/nano-can).
 
-## USB-CAN adapter: PCB ordered
+## USB-CAN adapter: bare PCB arrived
 
 The adapter schematic and 2-layer layout are done in KiCad
 ([hardware/usb-can-adapter](hardware/usb-can-adapter)). I used the open-source
-CANable 2.0 as a reference. The PCB is ordered from JLCPCB and the parts from LCSC.
+CANable 2.0 as a reference. The bare PCBs from JLCPCB have arrived. The parts from
+LCSC are still on the way.
 
-![USB-CAN adapter, KiCad 3D render](docs/img/usb-can-adapter-3d.png)
+| KiCad 3D render | Bare PCB from JLCPCB |
+|---|---|
+| ![USB-CAN adapter, KiCad 3D render](docs/img/usb-can-adapter-3d.png) | ![USB-CAN adapter, bare PCB](docs/img/usb-can-adapter-bare-pcb.jpg) |
 
 ![USB-CAN adapter schematic in KiCad](docs/img/usb-can-adapter-schematic.png)
 
