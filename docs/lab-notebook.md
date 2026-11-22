@@ -343,13 +343,20 @@ dioda gasząca flyback - chroni z cewki przy wyłączniu,
 przetwornica zamiast LDO, 
 watchdog  - restartuje MCU gdy się zawiesi
 
-## 2026-11-09
+## 2026-11-18
 płytka adaptera pomiar rezystancji pomiędzy gnd a tp1 - vbus, tp4 + 3v3 i tp6 can_3v3, OL - brak połączenia, poprawnie 
 
 Test ciągłości pomiędzy: 
 TP4 - J1 pin 1 - pisk  - ta sama sieć +3v3 
 TP2 - J1 pin 5 - J3 pin 3 - pisk - wszystko to GND 
 J3 pin 2 - J4 pin 2 - pisk CAN_L idzie prosto do zworki 
+
+## 2026-11-22
+
+ćwiczenia na płytce Ć: R7, R10 (odlutowany i wlutowany ponownie), R11, Q2, D1, U2.
+za dużo cyny na pierwszych lutach, potem lepiej. Bez dodatkowego topnika łatwiej,
+topnik z drutu wystarcza; dodatkowy tylko do poprawek i mostków.
+LED: tani miernik pokazuje OL przy Vf > ok.2 V, ale dioda świeci, więc czarna = katoda.
 
 
 
