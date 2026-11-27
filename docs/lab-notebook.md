@@ -358,6 +358,16 @@ za dużo cyny na pierwszych lutach, potem lepiej. Bez dodatkowego topnika łatwi
 topnik z drutu wystarcza; dodatkowy tylko do poprawek i mostków.
 LED: tani miernik pokazuje OL przy Vf > ok.2 V, ale dioda świeci, więc czarna = katoda.
 
+## 2026-11-27
+
+Zrobiłem: druga płytka, J2, U2, R4/R5, C1/C2/C11/C12, R1, R9, D1, potem U3 i R2. Na Ć zerwana ścieżka
+Po podłączeniu do pc, dioda nie świeciła, sprawdziłem napięcie na poszczególnych pinach LDO, pin 1 - 5V, pin 2 - 0V, pin 3 - 0,4V, didoa zapalała się przy docisku sondą - zimny lut na pinie 3 więc ldo był wyłączony.
+Po przegrzaniu wszystkich nóżek z topnikiem na pinie 3 - 5V i dioda świeci. 
+
+Test diody na U3 (ESD) - pin 2 zwarty z masą,  pin 1 - z pinem 6, pin 3 z pinem 4, na wszystkich pisk - poprawnie polutowane
+
+
+
 
 
 
